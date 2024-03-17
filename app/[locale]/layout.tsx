@@ -1,6 +1,7 @@
 import React from "react";
 import { unstable_setRequestLocale } from "next-intl/server";
 import { NextIntlClientProvider, useMessages } from "next-intl";
+import "../globals.css";
 
 const locales = ["en", "de"];
 
