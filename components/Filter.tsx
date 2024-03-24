@@ -9,55 +9,48 @@ const Filter = () => {
   const pathname = usePathname();
   const { replace } = useRouter();
 
-  const handleSearch = useDebouncedCallback((term) => {
+  const handleSearch = useDebouncedCallback((letter) => {
     const params = new URLSearchParams(searchParams);
-    console.log(`Searching... ${term}`);
-    params.set("page", "1");
-
-    if (term) {
-      params.set("letter", term);
-    } else {
-      params.delete("letter");
-    }
+    params.set("page", letter);
 
     replace(`${pathname}?${params.toString()}`);
   }, 300);
 
   const characters = [
-    "A",
-    "B",
-    "C",
-    "D",
-    "E",
-    "F",
-    "G",
-    "H",
-    "I",
-    "K",
-    "L",
-    "M",
-    "N",
-    "O",
-    "P",
-    "Q",
-    "R",
-    "S",
-    "T",
-    "V",
-    "X",
-    "Y",
-    "Z",
+    { value: "A" },
+    { value: "B" },
+    { value: "C" },
+    { value: "D" },
+    { value: "E" },
+    { value: "F" },
+    { value: "G" },
+    { value: "H" },
+    { value: "I" },
+    { value: "K" },
+    { value: "L" },
+    { value: "M" },
+    { value: "N" },
+    { value: "O" },
+    { value: "P" },
+    { value: "Q" },
+    { value: "R" },
+    { value: "S" },
+    { value: "T" },
+    { value: "V" },
+    { value: "X" },
+    { value: "Y" },
+    { value: "Z" },
   ];
   return (
-    <div className="bg-slate-100 w-full text-xl text-center my-5 rounded-2xl p-4">
+    <div className="bg-slate-100 w-full text-md text-center my-5 rounded-xl p-4">
       <div className="flex flex-wrap justify-center gap-1">
         {characters.map((c, index) => (
           <button
             key={`${c}-${index}`}
-            className="text-gray-500 border w-[48px] h-[48px] bg-white rounded-xl hover:bg-blue-600 hover:text-white"
-            onClick={() => handleSearch(c)}
+            className="text-gray-500 border w-[32px] h-[32px] bg-white rounded-lg hover:bg-blue-600 hover:text-white"
+            onClick={() => handleSearch(c.value)}
           >
-            {c}
+            {c.value}
           </button>
         ))}
       </div>

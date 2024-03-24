@@ -154,7 +154,7 @@ const VideoPlayer: React.FC<ReactPlayerProps> = (props) => {
                     onClick={() => setShowVideo(false)}
                     ref={cancelButtonRef}
                   >
-                    Close
+                    Bezárás
                   </button>
                 </div>
               </Dialog.Panel>

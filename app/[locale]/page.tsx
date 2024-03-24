@@ -1,10 +1,10 @@
-import { useTranslations } from "next-intl";
 import { unstable_setRequestLocale } from "next-intl/server";
 
 import { getTranslations } from "next-intl/server";
 import Filter from "@/components/Filter";
 import WordList from "@/components/WordList";
-//import { ITEMS_PER_PAGE, WORDS_B } from "@/app/constant";
+import Pagination from "@/components/pagination";
+import { Suspense } from "react";
 
 export async function generateMetadata({
   params: { locale },
@@ -18,31 +18,32 @@ export async function generateMetadata({
   };
 }
 
-export default function Index({
+export default async function Index({
   searchParams,
   params: { locale },
 }: {
   params: { locale: string };
   searchParams?: {
-    query?: string;
     page?: string;
   };
 }) {
   unstable_setRequestLocale(locale);
-  const t = useTranslations("Index");
 
-  const query = searchParams?.query || "";
   const currentPage = Number(searchParams?.page) || 1;
-  //const totalPages = WORDS_B.length / ITEMS_PER_PAGE;
+  const totalPages = 200;
 
   return (
     <div className="max-w-screen-lg mx-auto">
       <div className="flex flex-col bg-white p-4 md:p-10">
-        <h1 className="text-2xl text-center font-bold my-5">{t("app_name")}</h1>
-        <WordList query={query} currentPage={currentPage} />
-        <div className="mt-10 flex w-full justify-center">
+        <Pagination totalPages={totalPages} />
+        <h1 className="text-4xl text-center font-bold my-5 py-4 bg-[#F8E4DE] text-[#C41130] rounded-2xl">
+          b, B
+        </h1>
+        <Suspense fallback="loading...">
+          <WordList currentPage={currentPage} />
+        </Suspense>
+        <div className="flex w-full justify-center">
           <Filter />
-          {/*<Pagination totalPages={totalPages} />*/}
         </div>
       </div>
     </div>
