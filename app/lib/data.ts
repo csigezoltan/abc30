@@ -3,7 +3,7 @@ import { unstable_noStore as noStore } from "next/cache";
 export async function fetchPageData(searchParams: any) {
   noStore();
 
-  let query = "pageNumber=1";
+  let query = "pageNumber=36";
   if (searchParams?.page) {
     query = `pageNumber=${searchParams?.page}`;
   } else if (searchParams?.letterId) {

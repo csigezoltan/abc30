@@ -10,7 +10,8 @@ const VideoPlayer = dynamic(() => import("@/components/WordCard/VideoPlayer"), {
 });
 
 const WordCard = ({ word }: { word: any }) => {
-  const [showVideo, setShowVideo] = useState(false);
+  const [showVideo, setShowVideo] = useState<boolean>(false);
+  const [videoSrc, setVideoSrc] = useState<string | null>(null);
   noStore();
 
   console.log(word);
@@ -20,10 +21,14 @@ const WordCard = ({ word }: { word: any }) => {
       <div className="flex-grow px-6 py-8">
         <WordElements word={word} />
       </div>
-      <Buttons setShowVideo={setShowVideo} />
-      {showVideo && (
+      <Buttons
+        setShowVideo={setShowVideo}
+        setVideoSrc={setVideoSrc}
+        word={word}
+      />
+      {showVideo && videoSrc && (
         <VideoPlayer
-          url="https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd"
+          url={videoSrc}
           showVideo={showVideo}
           setShowVideo={setShowVideo}
           word={word}

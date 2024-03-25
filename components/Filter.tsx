@@ -17,8 +17,6 @@ const Filter = ({ letters }: { letters: any }) => {
     replace(`${pathname}?${params.toString()}`);
   }, 300);
 
-  console.log(letters);
-
   if (letters) {
     return (
       <div className="bg-slate-100 w-full text-md text-center my-5 rounded-xl p-4">

@@ -10,7 +10,8 @@ import { useRouter } from "next/navigation";
 export default function Pagination({ totalPages }: { totalPages: number }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const currentPage = Number(searchParams.get("page")) || 1;
+  const currentPage = Number(searchParams.get("page")) || 36;
+  const router = useRouter();
 
   const createPageURL = (pageNumber: number | string) => {
     const params = new URLSearchParams(searchParams);
@@ -26,7 +27,19 @@ export default function Pagination({ totalPages }: { totalPages: number }) {
           href={createPageURL(currentPage - 1)}
           isDisabled={currentPage <= 1}
         />
-        <PaginationInput createPageURL={createPageURL} />
+        <div className="flex -space-x-px">
+          <input
+            type="number"
+            className="border border-gray-400 rounded-md px-4 w-[120px] focus:outline-amber-500"
+            placeholder="1"
+            min={1}
+            max={10000}
+            onChange={(event) => {
+              router.push(createPageURL(event.target.value));
+            }}
+            value={currentPage}
+          />
+        </div>
         <PaginationArrow
           direction="right"
           href={createPageURL(currentPage + 1)}
@@ -34,29 +47,6 @@ export default function Pagination({ totalPages }: { totalPages: number }) {
         />
       </div>
     </>
-  );
-}
-
-function PaginationInput({
-  createPageURL,
-}: {
-  createPageURL: (n: number | string) => string;
-}) {
-  const router = useRouter();
-
-  return (
-    <div className="flex -space-x-px">
-      <input
-        type="number"
-        className="border border-gray-400 rounded-md px-4 w-[120px] focus:outline-amber-500"
-        placeholder="1"
-        min={1}
-        max={10000}
-        onChange={(event) => {
-          router.push(createPageURL(event.target.value));
-        }}
-      />
-    </div>
   );
 }
 
