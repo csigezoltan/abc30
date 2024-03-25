@@ -6,17 +6,11 @@ import { usePathname, useSearchParams } from "next/navigation";
 import AngleLeftIcon from "@/components/icons/AngleLeftIcon";
 import AngleRightIcon from "@/components/icons/AngleRightIcon";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
 
 export default function Pagination({ totalPages }: { totalPages: number }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const currentPage = Number(searchParams.get("page")) || 1;
-  const [inputVal, setInputVal] = useState<number>(currentPage);
-
-  useEffect(() => {
-    setInputVal(Number(searchParams.get("page")));
-  }, [searchParams]);
 
   const createPageURL = (pageNumber: number | string) => {
     const params = new URLSearchParams(searchParams);
@@ -32,7 +26,7 @@ export default function Pagination({ totalPages }: { totalPages: number }) {
           href={createPageURL(currentPage - 1)}
           isDisabled={currentPage <= 1}
         />
-        <PaginationInput value={inputVal} createPageURL={createPageURL} />
+        <PaginationInput createPageURL={createPageURL} />
         <PaginationArrow
           direction="right"
           href={createPageURL(currentPage + 1)}
@@ -44,10 +38,8 @@ export default function Pagination({ totalPages }: { totalPages: number }) {
 }
 
 function PaginationInput({
-  value,
   createPageURL,
 }: {
-  value: number;
   createPageURL: (n: number | string) => string;
 }) {
   const router = useRouter();
@@ -63,7 +55,6 @@ function PaginationInput({
         onChange={(event) => {
           router.push(createPageURL(event.target.value));
         }}
-        value={value}
       />
     </div>
   );

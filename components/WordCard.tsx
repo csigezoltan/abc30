@@ -13,6 +13,8 @@ const WordCard = ({ word }: { word: any }) => {
   const [showVideo, setShowVideo] = useState(false);
   noStore();
 
+  console.log(word);
+
   return (
     <li className="flex flex-col bg-gray-50 rounded-3xl overflow-hidden shadow">
       <div className="flex-grow px-6 py-8">

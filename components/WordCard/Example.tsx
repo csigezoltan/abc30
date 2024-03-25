@@ -4,12 +4,12 @@ import { v4 as uuidv4 } from "uuid";
 const Example = ({ examples }: { examples: any[] }) => {
   if (examples.length > 0) {
     return (
-      <div className="flex flex-col gap-1">
-        {examples.map((example) => (
-          <p key={`${uuidv4()}-${example.id}`} className="flex gap-1">
-            <span>☀</span>
+      <div>
+        {examples.map((example, index) => (
+          <span key={`${uuidv4()}-${example.id}`}>
+            <span className="text-orange-400">{"☀".repeat(index + 1)}</span>
             {example.value}
-          </p>
+          </span>
         ))}
       </div>
     );

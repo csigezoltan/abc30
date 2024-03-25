@@ -20,7 +20,7 @@ const Translations = ({
               className="font-medium"
             >
               <span
-                className={clsx("text-xl", {
+                className={clsx("text-lg", {
                   "text-red-600": translation.type === 1,
                   "text-gray-500": translation.type === 2,
                 })}

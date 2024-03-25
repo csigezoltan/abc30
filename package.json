@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@abc30/abc30-api-client": "^0.0.1-SNAPSHOT.202403252135",
     "@headlessui/react": "^1.7.18",
     "@types/video.js": "^7.3.57",
     "clsx": "^2.1.0",

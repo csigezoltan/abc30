@@ -14,8 +14,7 @@ const WordElements = ({ word }: { word: any }) => {
           <Image
             height={60}
             width={200}
-            sizes="100vw"
-            src={`${word?.imagePath}${word?.cursiveImage}`}
+            src={`data:image/jpeg;base64,${word.cursiveImage}`}
             alt={word?.lemma || ""}
             style={{
               width: "auto",

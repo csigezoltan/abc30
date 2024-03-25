@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, useRef } from "react";
+import React, { Fragment, useRef } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { ReactPlayerProps } from "react-player";
 import ReactPlayer from "react-player/lazy";
@@ -113,13 +113,13 @@ const VideoPlayer: React.FC<ReactPlayerProps> = (props) => {
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-gray-50 text-left shadow-xl transition-all max-w-screen-lg">
+              <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-gray-50 text-left shadow-xl transition-all max-w-screen-xl">
                 <div className="flex flex-col lg:flex-row gap-8 p-4">
-                  <div className="flex-shrink-0 w-[320px]">
+                  <div className="flex-shrink-0 w-full max-w-[320px]">
                     <WordElements word={word} />
                   </div>
                   <div className="flex rounded overflow-hidden align-middle ">
-                    <div className="aspect-[4/3] border-4 border-gray-100">
+                    <div className="border-4 border-gray-100">
                       <ReactPlayer
                         url={url}
                         ref={ref}
