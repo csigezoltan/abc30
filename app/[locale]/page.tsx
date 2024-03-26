@@ -47,7 +47,6 @@ export default async function Index({
         <Suspense fallback={<Loader />}>
           <h1 className="text-3xl text-center font-bold my-5 py-4 bg-[#F8E4DE] text-[#C41130] rounded-2xl">
             b, B
-            {/*{`${pageData.numberTextInSourceLanguage} - ${pageData.number} - ${pageData.numberTextInTargetLanguage}`}*/}
           </h1>
           <WordList words={pageData?.words} />
           <div className="flex w-full justify-center">

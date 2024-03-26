@@ -8,6 +8,7 @@ import Description from "@/components/WordCard/Description";
 import WordImage from "@/components/WordCard/WordImage";
 
 const WordElements = ({ word }: { word: any }) => {
+  console.log(word);
   return (
     <div className="flex flex-col gap-2">
       <div className="flex flex-col gap-2">
@@ -31,7 +32,9 @@ const WordElements = ({ word }: { word: any }) => {
               {" "}
               «{word?.wordClass}»{" "}
             </span>
-            {word?.forms && <Forms forms={word?.forms} />}
+            {word?.forms && (
+              <Forms forms={word?.forms} wordClass={word?.wordClass} />
+            )}
           </div>
           {word.description && <Description description={word.description} />}
           {word?.sourceLanguageExamples && (
