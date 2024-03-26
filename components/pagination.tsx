@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 export default function Pagination({ totalPages }: { totalPages: number }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const currentPage = Number(searchParams.get("page")) || 36;
+  const currentPage = Number(searchParams.get("page")) || 34;
   const router = useRouter();
 
   const createPageURL = (pageNumber: number | string) => {
