@@ -18,7 +18,7 @@ const Filter = ({ letters }: { letters: any }) => {
 
   if (letters) {
     return (
-      <div className="bg-slate-100 w-full text-md text-center my-5 rounded-xl p-4">
+      <div className="bg-gray-100 w-full text-md text-center my-5 rounded-xl p-4">
         <div className="flex flex-wrap justify-center gap-1">
           {letters?.map((letter: any, index: number) => (
             <button
