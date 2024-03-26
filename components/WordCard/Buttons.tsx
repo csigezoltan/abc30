@@ -17,7 +17,7 @@ const Buttons = ({
         onClick={() => {
           setShowVideo(true);
           setVideoSrc(
-            "https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd",
+            `https://abc30.ingenimind.com/api/streaming/videos/${word?.sourceLanguageVideo?.path}`,
           );
         }}
       >
@@ -28,7 +28,7 @@ const Buttons = ({
         onClick={() => {
           setShowVideo(true);
           setVideoSrc(
-            "https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd",
+            `https://abc30.ingenimind.com/api/streaming/videos/${word?.targetLanguageVideo?.path}`,
           );
         }}
       >

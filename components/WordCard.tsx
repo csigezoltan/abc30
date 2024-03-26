@@ -26,7 +26,7 @@ const WordCard = ({ word }: { word: any }) => {
       />
       {showVideo && videoSrc && (
         <VideoPlayer
-          url={`https://abc30.ingenimind.com/api/streaming/videos/${word?.handwritingVideo?.path}`}
+          url={videoSrc}
           showVideo={showVideo}
           setShowVideo={setShowVideo}
           word={word}
