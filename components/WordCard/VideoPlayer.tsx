@@ -118,26 +118,24 @@ const VideoPlayer: React.FC<ReactPlayerProps> = (props) => {
                   <div className="flex-shrink-0 w-full max-w-[320px]">
                     <WordElements word={word} />
                   </div>
-                  <div className="flex rounded overflow-hidden align-middle ">
-                    <div className="border-4 border-gray-100">
-                      <ReactPlayer
-                        url={url}
-                        ref={ref}
-                        width="100%"
-                        height="100%"
-                        controls
-                        playing
-                        onError={(error) => {
-                          console.log(`🚀 ~ file: App.tsx:259 ~ error:`, error);
-                        }}
-                        /*onReady={() => onReady()}*/
-                        /*config={{
+                  <div className="flex rounded overflow-hidden items-center border-4 border-gray-100">
+                    <ReactPlayer
+                      url={url}
+                      ref={ref}
+                      width="640px"
+                      height="360px"
+                      controls
+                      playing
+                      onError={(error) => {
+                        console.log(`🚀 ~ file: App.tsx:259 ~ error:`, error);
+                      }}
+                      /*onReady={() => onReady()}*/
+                      /*config={{
                           file: {
                             forceDASH: true,
                           },
                         }}*/
-                      />
-                    </div>
+                    />
                   </div>
                 </div>
                 <div className="bg-gray-100 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">

@@ -11,7 +11,6 @@ const WordElements = ({ word }: { word: any }) => {
   return (
     <div className="flex flex-col gap-2">
       <div className="flex flex-col gap-2">
-        {word?.imagePath !== "" && <WordImage imagePath={word.imagePath} />}
         <div>
           <Image
             height={60}
@@ -46,6 +45,7 @@ const WordElements = ({ word }: { word: any }) => {
           )}
           {word?.idioms && <Idioms idioms={word.idioms} />}
         </div>
+        {word?.imagePath !== "" && <WordImage imagePath={word.imagePath} />}
       </div>
     </div>
   );
