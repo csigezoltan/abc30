@@ -39,9 +39,14 @@ export default async function Index({
   return (
     <div className="max-w-screen-lg mx-auto min-h-screen">
       <div className="flex flex-col bg-white p-4 md:p-10 min-h-screen shadow shadow-gray-300">
-        <Pagination totalPages={totalPages} />
+        <Pagination
+          totalPages={totalPages}
+          numberTextInSourceLanguage={pageData.numberTextInSourceLanguage}
+          numberTextInTargetLanguage={pageData.numberTextInTargetLanguage}
+        />
         <Suspense fallback={<Loader />}>
           <h1 className="text-3xl text-center font-bold my-5 py-4 bg-[#F8E4DE] text-[#C41130] rounded-2xl">
+            b, B
             {/*{`${pageData.numberTextInSourceLanguage} - ${pageData.number} - ${pageData.numberTextInTargetLanguage}`}*/}
           </h1>
           <WordList words={pageData?.words} />

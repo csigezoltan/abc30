@@ -63,7 +63,6 @@ const WritePopup = ({
 
   // @ts-ignore
   const data: any = example[word];
-  console.log(data);
 
   return (
     <Transition.Root show={showWrite} as={Fragment}>

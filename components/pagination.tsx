@@ -7,7 +7,15 @@ import AngleLeftIcon from "@/components/icons/AngleLeftIcon";
 import AngleRightIcon from "@/components/icons/AngleRightIcon";
 import { useRouter } from "next/navigation";
 
-export default function Pagination({ totalPages }: { totalPages: number }) {
+export default function Pagination({
+  totalPages,
+  numberTextInSourceLanguage,
+  numberTextInTargetLanguage,
+}: {
+  totalPages: number;
+  numberTextInSourceLanguage: string;
+  numberTextInTargetLanguage: string;
+}) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const currentPage = Number(searchParams.get("page")) || 34;
@@ -27,10 +35,11 @@ export default function Pagination({ totalPages }: { totalPages: number }) {
           href={createPageURL(currentPage - 1)}
           isDisabled={currentPage <= 1}
         />
-        <div className="flex -space-x-px">
+        <div className="flex items-center gap-4 height-[40px]">
+          <div className="text-blue-600">{numberTextInSourceLanguage}</div>
           <input
             type="number"
-            className="border border-gray-400 rounded-md px-4 w-[120px] focus:outline-amber-500"
+            className="border border-gray-400 rounded-md px-4 w-[80px] focus:outline-amber-500"
             placeholder="1"
             min={1}
             max={10000}
@@ -38,7 +47,11 @@ export default function Pagination({ totalPages }: { totalPages: number }) {
               router.push(createPageURL(event.target.value));
             }}
             value={currentPage}
+            style={{
+              height: "40px",
+            }}
           />
+          <div className="text-blue-600">{numberTextInTargetLanguage}</div>
         </div>
         <PaginationArrow
           direction="right"
