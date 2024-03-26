@@ -59,6 +59,104 @@ const WritePopup = ({
         title: "A közmondás szerint mi a bátraké?",
       },
     ],
+
+    
+    bebizonyít: [
+      {
+        title:
+          "Hogyan kell szótagolni a bebizonyít szavunkat?",
+      },
+      {
+        title: "Hogy írjuk helyesen: bebizonyit vagy bebizonyít?",
+      },
+    ],
+    beenged: [
+      {
+        title:
+          "Feltöltés alatt...",
+      },
+      {
+        title: "Hogy írjuk helyesen: be engedem vagy beengedem?",
+      },
+    ],
+    bekapcsol: [
+      {
+        title:
+          "Mi a bekapcsol ellentéte?",
+      },
+      {
+        title: "Feltöltés alatt...",
+      },
+    ],
+    biztonságos: [
+      {
+        title:
+          "Szerinted melyik leírás helyes: bisztonságos vagy biztonságos?",
+      },
+      {
+        title: "Hogyan szótagolnád a biztonságos szót?",
+      },
+    ],
+    boldog: [
+      {
+        title:
+          "Fokozzuk a boldog szavunkat!",
+      },
+      {
+        title: "Feltöltés alatt...",
+      },
+    ],
+    boríték: [
+      {
+        title:
+          "Hogyan szótagolnád a boríték szót?",
+      },
+      {
+        title: "Hogyan szótagolnád a boríték szót?",
+      },
+    ],
+    borsó: [
+      {
+        title:
+          "Melyik ó hosszú a szóban: borsó – bórsó – bórso?",
+      },
+    ],
+    borz: [
+      {
+        title:
+          "Milyen tulajdonságot szoktunk kapcsolni a borzhoz?",
+      },
+      {
+        title: "Hogyan szótagolnád a borz szót?",
+      },
+    ],
+    bújócskázik: [
+      {
+        title:
+          "Feltöltés alatt...",
+      },
+      {
+        title: "Hogy írjuk helyesen: bujócskázik vagy bújócskázik?",
+      },
+    ],
+    bukósisak: [
+      {
+        title:
+          "Hány szót fedezel fel a bukósisak szóban?",
+      },
+      {
+        title: "Hogy írjuk helyesen: bukósisak vagy bukó sisak?",
+      },
+    ],
+    bunda: [
+      {
+        title:
+          "Változtass meg egyetlen magánhangzót a szóban úgy, hogy egy másik értelmes szót kapj!",
+      },
+      {
+        title: "Mi a bunda szó többes száma?",
+      },
+    ],
   };
 
   // @ts-ignore
