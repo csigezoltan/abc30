@@ -8,8 +8,12 @@ import { unstable_noStore as noStore } from "next/cache";
 const VideoPlayer = dynamic(() => import("@/components/WordCard/VideoPlayer"), {
   ssr: false,
 });
+const WritePopup = dynamic(() => import("@/components/WordCard/WritePopup"), {
+  ssr: false,
+});
 
 const WordCard = ({ word }: { word: any }) => {
+  const [showWrite, setShowWrite] = useState<boolean>(false);
   const [showVideo, setShowVideo] = useState<boolean>(false);
   const [videoSrc, setVideoSrc] = useState<string | null>(null);
   noStore();
@@ -21,6 +25,7 @@ const WordCard = ({ word }: { word: any }) => {
       </div>
       <Buttons
         setShowVideo={setShowVideo}
+        setShowWrite={setShowWrite}
         setVideoSrc={setVideoSrc}
         word={word}
       />
@@ -30,6 +35,13 @@ const WordCard = ({ word }: { word: any }) => {
           showVideo={showVideo}
           setShowVideo={setShowVideo}
           word={word}
+        />
+      )}
+      {showWrite && (
+        <WritePopup
+          showWrite={showWrite}
+          setShowWrite={setShowWrite}
+          word={word?.lemma}
         />
       )}
     </li>

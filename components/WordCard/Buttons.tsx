@@ -4,10 +4,12 @@ import Image from "next/image";
 const Buttons = ({
   setShowVideo,
   setVideoSrc,
+  setShowWrite,
   word,
 }: {
   setShowVideo: any;
   setVideoSrc: any;
+  setShowWrite: any;
   word: any;
 }) => {
   return (
@@ -47,7 +49,9 @@ const Buttons = ({
       </button>
       <button
         className="rounded-2xl overflow-hidden p-2 bg-white exercise"
-        disabled={true}
+        onClick={() => {
+          setShowWrite(true);
+        }}
       >
         <Image
           src="/images/exercise.png"
