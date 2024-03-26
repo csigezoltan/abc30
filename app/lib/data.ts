@@ -47,3 +47,28 @@ export async function fetchLetters() {
     throw new Error("Failed to fetch letters.");
   }
 }
+
+export async function fetchImage(imagePath: string) {
+  noStore();
+
+  console.log(process.env.API_BASE_URL);
+
+  try {
+    const imageResponse = await fetch(
+      `${process.env.API_BASE_URL}/streaming/images/${imagePath}`,
+      {
+        method: "GET",
+        /*headers: {
+          accept: "image/jpeg",
+          "x-api-version": "1.0",
+        },*/
+      },
+    );
+
+    let obj = await imageResponse.blob();
+    return URL.createObjectURL(obj);
+  } catch (error) {
+    console.error("Api Error:", error);
+    throw new Error("Failed to fetch image.");
+  }
+}

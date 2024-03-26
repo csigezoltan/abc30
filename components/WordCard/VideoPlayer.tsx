@@ -24,10 +24,10 @@ const VideoPlayer: React.FC<ReactPlayerProps> = (props) => {
   const ref = useRef(null);
   const cancelButtonRef = useRef(null);
 
-  const onReady = () => {
+  /*const onReady = () => {
     // @ts-ignore
     ref?.current?.getInternalPlayer("dash");
-  };
+  };*/
 
   /*const getDashData = () => {
     const reactPlayer = ref.current;
@@ -130,12 +130,12 @@ const VideoPlayer: React.FC<ReactPlayerProps> = (props) => {
                         onError={(error) => {
                           console.log(`🚀 ~ file: App.tsx:259 ~ error:`, error);
                         }}
-                        onReady={() => onReady()}
-                        config={{
+                        /*onReady={() => onReady()}*/
+                        /*config={{
                           file: {
                             forceDASH: true,
                           },
-                        }}
+                        }}*/
                       />
                     </div>
                   </div>

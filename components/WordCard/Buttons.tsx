@@ -4,13 +4,10 @@ import Image from "next/image";
 const Buttons = ({
   setShowVideo,
   setVideoSrc,
-  word,
 }: {
   setShowVideo: any;
   setVideoSrc: any;
-  word: any;
 }) => {
-  console.log(word);
   return (
     <div className="flex gap-2 px-6 py-6 bg-gray-100 justify-center">
       <button

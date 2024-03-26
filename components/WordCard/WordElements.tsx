@@ -5,11 +5,13 @@ import Example from "@/components/WordCard/Example";
 import Idioms from "@/components/WordCard/Idioms";
 import Translations from "@/components/WordCard/Translations";
 import Description from "@/components/WordCard/Description";
+import WordImage from "@/components/WordCard/WordImage";
 
 const WordElements = ({ word }: { word: any }) => {
   return (
     <div className="flex flex-col gap-2">
       <div className="flex flex-col gap-2">
+        {word?.imagePath !== "" && <WordImage imagePath={word.imagePath} />}
         <div>
           <Image
             height={60}

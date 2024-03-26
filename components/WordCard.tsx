@@ -14,8 +14,6 @@ const WordCard = ({ word }: { word: any }) => {
   const [videoSrc, setVideoSrc] = useState<string | null>(null);
   noStore();
 
-  console.log(word);
-
   return (
     <li className="flex flex-col bg-gray-50 rounded-3xl overflow-hidden shadow">
       <div className="flex-grow px-6 py-8">
@@ -28,7 +26,7 @@ const WordCard = ({ word }: { word: any }) => {
       />
       {showVideo && videoSrc && (
         <VideoPlayer
-          url={videoSrc}
+          url={`https://abc30.ingenimind.com/api/streaming/videos/${word?.handwritingVideo?.path}`}
           showVideo={showVideo}
           setShowVideo={setShowVideo}
           word={word}

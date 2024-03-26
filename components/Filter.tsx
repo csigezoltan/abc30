@@ -9,10 +9,9 @@ const Filter = ({ letters }: { letters: any }) => {
   const pathname = usePathname();
   const { replace } = useRouter();
 
-  const handleSearch = useDebouncedCallback((letter) => {
+  const handleSearch = useDebouncedCallback((pageNumber) => {
     const params = new URLSearchParams(searchParams);
-    params.delete("page");
-    params.set("letterId", letter);
+    params.set("page", pageNumber);
 
     replace(`${pathname}?${params.toString()}`);
   }, 300);
@@ -25,7 +24,7 @@ const Filter = ({ letters }: { letters: any }) => {
             <button
               key={`${letter}-${index}`}
               className="text-gray-500 border p-2 bg-white rounded-lg hover:bg-blue-600 hover:text-white"
-              onClick={() => handleSearch(letter.id)}
+              onClick={() => handleSearch(letter.pageNumber)}
             >
               {letter.value}
             </button>

@@ -1,39 +1,40 @@
 {
-  "name": "abc30",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@abc30/abc30-api-client": "^0.0.1-SNAPSHOT.202403252135",
-    "@headlessui/react": "^1.7.18",
-    "@types/video.js": "^7.3.57",
-    "clsx": "^2.1.0",
-    "next": "14.1.2",
-    "next-intl": "^3.9.2",
-    "prettier": "^3.2.5",
-    "react": "^18",
-    "react-dom": "^18",
-    "react-player": "^2.15.1",
-    "use-debounce": "^10.0.0",
-    "uuid": "^9.0.1",
-    "video.js": "^8.10.0"
-  },
-  "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "@types/uuid": "^9.0.8",
-    "autoprefixer": "^10.0.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.1.2",
-    "postcss": "^8",
-    "prisma": "^5.10.2",
-    "tailwindcss": "^3.3.0",
-    "typescript": "^5"
-  }
+    "name": "abc30",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "@abc30/abc30-api-client": "0.0.1-SNAPSHOT.202403261843",
+        "@abc30/abc30-streaming-api-client": "0.0.1-SNAPSHOT.202403260030",
+        "@headlessui/react": "^1.7.18",
+        "@types/video.js": "^7.3.57",
+        "clsx": "^2.1.0",
+        "next": "14.1.2",
+        "next-intl": "^3.9.2",
+        "prettier": "^3.2.5",
+        "react": "^18",
+        "react-dom": "^18",
+        "react-player": "^2.15.1",
+        "use-debounce": "^10.0.0",
+        "uuid": "^9.0.1",
+        "video.js": "^8.10.0"
+    },
+    "devDependencies": {
+        "@types/node": "^20",
+        "@types/react": "^18",
+        "@types/react-dom": "^18",
+        "@types/uuid": "^9.0.8",
+        "autoprefixer": "^10.0.1",
+        "eslint": "^8",
+        "eslint-config-next": "14.1.2",
+        "postcss": "^8",
+        "prisma": "^5.10.2",
+        "tailwindcss": "^3.3.0",
+        "typescript": "^5"
+    }
 }

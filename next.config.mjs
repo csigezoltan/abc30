@@ -5,6 +5,7 @@ const withNextIntl = createNextIntlPlugin();
 const nextConfig = {
     images: {
         unoptimized: true,
+        domains: ['abc30.ingenimind.com']
     },
 };
 
