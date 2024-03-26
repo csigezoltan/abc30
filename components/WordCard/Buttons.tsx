@@ -4,9 +4,11 @@ import Image from "next/image";
 const Buttons = ({
   setShowVideo,
   setVideoSrc,
+  word,
 }: {
   setShowVideo: any;
   setVideoSrc: any;
+  word: any;
 }) => {
   return (
     <div className="flex gap-2 px-6 py-6 bg-gray-100 justify-center">
@@ -37,7 +39,7 @@ const Buttons = ({
         onClick={() => {
           setShowVideo(true);
           setVideoSrc(
-            "https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd",
+            `https://abc30.ingenimind.com/api/streaming/videos/${word?.handwritingVideo?.path}`,
           );
         }}
       >
